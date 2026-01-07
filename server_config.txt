@@ -1,0 +1,25 @@
+# NDMS Server Configuration
+# ===========================
+# 
+# Instructions:
+# 1. Change the SERVER_URL below to match your current network IP and port
+# 2. Make sure to include http:// or https:// at the beginning
+# 3. Do NOT include a trailing slash (/) at the end
+# 4. After changing, restart your PHP server
+#
+# Examples:
+# - Local development: http://localhost:3000
+# - Home network: http://192.168.1.100:3000  
+# - Campus network: http://192.168.8.240:3000
+# - Office network: http://10.0.0.50:3000
+#
+# Current Configuration:
+SERVER_URL=http://10.0.200.64:3000
+
+# QR Code Settings:
+# The QR codes will automatically point to: {SERVER_URL}/public_profile.php?citizen_id={ID}
+#
+# Notes:
+# - This file is used by the PHP application to generate correct URLs
+# - Update this file whenever you change networks or IP addresses
+# - The application will automatically use this URL for QR codes and links

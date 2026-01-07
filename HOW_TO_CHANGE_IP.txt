@@ -1,0 +1,52 @@
+📡 NDMS Server Configuration Instructions
+===========================================
+
+🏢 For Campus/Office Networks:
+------------------------------
+When you move to a different network (campus, office, home), follow these steps:
+
+🔧 STEP 1: Find Your New IP Address
+   • Windows: Open Command Prompt → type: ipconfig
+   • Look for "IPv4 Address" under your active network adapter
+   • Example: 192.168.8.240, 10.0.0.50, 172.16.1.100
+
+📝 STEP 2: Update Configuration File
+   • Open: server_config.txt
+   • Find the line: SERVER_URL=http://192.168.8.240:3000
+   • Change it to: SERVER_URL=http://YOUR_NEW_IP:3000
+   • Save the file
+
+🔄 STEP 3: Restart PHP Server
+   • Stop your current PHP server (Ctrl+C)
+   • Start it again with: php -S YOUR_NEW_IP:3000
+
+✅ STEP 4: Test
+   • Open: http://YOUR_NEW_IP:3000 in browser
+   • Generate a new QR code
+   • Scan with mobile device on same network
+
+📱 Common Network Examples:
+--------------------------
+🏠 Home WiFi:     SERVER_URL=http://192.168.1.100:3000
+🏫 Campus WiFi:   SERVER_URL=http://192.168.8.240:3000  
+🏢 Office LAN:    SERVER_URL=http://10.0.0.50:3000
+🖥️  Local Test:   SERVER_URL=http://localhost:3000
+
+⚠️ IMPORTANT NOTES:
+-------------------
+• Mobile device must be on the SAME WiFi network
+• Windows Firewall may need to allow PHP server
+• Some campus networks block device-to-device communication
+• QR codes generated with old IP won't work with new IP
+
+🆘 Troubleshooting:
+------------------
+• QR not working? Check if mobile is on same WiFi
+• Server not accessible? Check Windows Firewall
+• Still issues? Try: php -S 0.0.0.0:3000 (allows all IPs)
+
+📞 Quick Reference:
+------------------
+Config File: server_config.txt
+Key Line: SERVER_URL=http://YOUR_IP:3000
+Test URL: http://YOUR_IP:3000/public_profile.php
