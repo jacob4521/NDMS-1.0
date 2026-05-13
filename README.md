@@ -114,6 +114,3 @@ NDMS/
     ├── auth.php        # Authentication helpers
     └── phpqrcode/      # QR code library (download separately)
 ```
-
----
-**Good luck with your Final Project! 🇱🇰**
